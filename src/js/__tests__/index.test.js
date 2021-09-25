@@ -14,10 +14,12 @@ test('1 test', () => {
 });
 
 test('2 test', () => {
+  // eslint-disable-next-line no-new
   expect(() => { new Character('Nikita', 'slark'); }).toThrow(Error);
 });
 
 test('3 test', () => {
+  // eslint-disable-next-line no-new
   expect(() => { new Character('L', 'Swordsman'); }).toThrow(Error);
 });
 
