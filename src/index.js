@@ -1,8 +1,11 @@
+/* eslint-disable no-multi-assign */
 // eslint-disable-next-line max-classes-per-file
 export default class Character {
   constructor(name, type) {
     this.health = 100;
     this.level = 1;
+    this.attack = 0;
+    this.defence = 0;
     if (name.length >= 2 && name.length <= 10) {
       this.name = name;
     } else {
@@ -15,7 +18,26 @@ export default class Character {
       this.type = type;
     }
   }
+
+  levelUp() {
+    if (this.health > 0) {
+      this.level = this.level += 1;
+      this.health = 100;
+      this.attack = this.attack *= 1.2;
+      this.defence = this.defence *= 1.2;
+    } else {
+      throw new Error('Нельзя повысить левел умершего');
+    }
+  }
+
+  damage(points) {
+    this.health -= points * (1 - this.defence / 100);
+    if (this.health < 0) {
+      this.health = 0;
+    }
+  }
 }
+
 
 // eslint-disable-next-line no-unused-vars
 export class Bowerman extends Character {

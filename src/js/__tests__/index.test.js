@@ -7,7 +7,7 @@ test('1 test', () => {
   const result = new Character('Nikita', 'Bowman');
 
   const expected = {
-    name: 'Nikita', type: 'Bowman', health: 100, level: 1,
+    name: 'Nikita', type: 'Bowman', health: 100, level: 1, attack: 0, defence: 0,
   };
 
   expect(result).toEqual(expected);
@@ -75,4 +75,53 @@ test('9 test', () => {
     name: 'zombie789', type: 'Zombie', health: 100, level: 1, attack: 40, defence: 10,
   };
   expect(result).toEqual(expected);
+});
+
+test('1 metod level up hp > 0', () => {
+  const bower = new Bowerman('mag', 'Bowman');
+  bower.levelUp();
+  expect(bower).toEqual({
+    name: 'mag',
+    type: 'Bowman',
+    health: 100,
+    attack: 30,
+    defence: 30,
+    level: 2,
+  });
+});
+
+test('2 metod level up hp <= 0', () => {
+  const bower = new Bowerman('mag', 'Bowman');
+  bower.health = 0;
+  expect(() => {
+    bower.levelUp();
+  }).toThrow(Error);
+});
+
+test('damage, helth=100, points=20', () => {
+  // eslint-disable-next-line no-undef
+  const bower = new Bowerman('mag', 'Bowman');
+  bower.damage(20);
+  expect(bower).toEqual({
+    name: 'mag',
+    type: 'Bowman',
+    health: 85,
+    attack: 25,
+    defence: 25,
+    level: 1,
+  });
+});
+
+test('damage, health = 0', () => {
+  const hero = new Bowerman('mag', 'Bowman');
+  hero.health = 10;
+  hero.damage(20);
+  expect(hero).toEqual({
+    name: 'mag',
+    type: 'Bowman',
+    health: 0,
+    attack: 25,
+    defence: 25,
+    level: 1,
+  });
 });
