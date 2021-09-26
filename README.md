@@ -1,1 +1,0 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/u57jnvjhnayjgn73?svg=true)](https://ci.appveyor.com/project/VoinovNikita/ajs-oop-2)
