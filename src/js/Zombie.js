@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 
-import Character from '../Character';
+import Character from '..';
 
 export default class Zombie extends Character {
   constructor(name, type) {

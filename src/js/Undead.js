@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 
-import Character from '../Character';
+import Character from '..';
 
 export default class Undead extends Character {
   constructor(name, type) {

@@ -1,4 +1,4 @@
-import Character from '../../Character';
+import Character from '../..';
 import Bowerman from '../Bowerman';
 import Daemon from '../Daemon';
 import Magician from '../Magician';

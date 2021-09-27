@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import Character from '../Character';
+import Character from '..';
 
 export default class Daemon extends Character {
   constructor(name, type) {
