@@ -1,29 +1,32 @@
-import Character, {
-  Bowerman, Swordsman, Magician, Daemon, Undead, Zombie,
-} from '../../index';
+import Character from '../../Character';
+import Bowerman from '../Bowerman';
+import Daemon from '../Daemon';
+import Magician from '../Magician';
+import Swordsman from '../Swordsman';
+import Undead from '../Undead';
+import Zombie from '../Zombie';
 
-
-test('1 test', () => {
+test('checking for class output without errors', () => {
   const result = new Character('Nikita', 'Bowman');
 
   const expected = {
-    name: 'Nikita', type: 'Bowman', health: 100, level: 1, attack: 0, defence: 0,
+    name: 'Nikita', type: 'Bowman', health: 100, level: 1,
   };
 
   expect(result).toEqual(expected);
 });
 
-test('2 test', () => {
+test('check, error by class type', () => {
   // eslint-disable-next-line no-new
   expect(() => { new Character('Nikita', 'slark'); }).toThrow(Error);
 });
 
-test('3 test', () => {
+test('check, error by class name', () => {
   // eslint-disable-next-line no-new
   expect(() => { new Character('L', 'Swordsman'); }).toThrow(Error);
 });
 
-test('4 test', () => {
+test('checking class output Bowerman', () => {
   const result = new Bowerman('hek777', 'Bowman');
 
   const expected = {
@@ -32,7 +35,7 @@ test('4 test', () => {
   expect(result).toEqual(expected);
 });
 
-test('5 test', () => {
+test('checking class output Swordsman', () => {
   const result = new Swordsman('injun', 'Swordsman');
 
   const expected = {
@@ -41,7 +44,7 @@ test('5 test', () => {
   expect(result).toEqual(expected);
 });
 
-test('6 test', () => {
+test('checking class output Magician', () => {
   const result = new Magician('mag', 'Magician');
 
   const expected = {
@@ -50,7 +53,7 @@ test('6 test', () => {
   expect(result).toEqual(expected);
 });
 
-test('7 test', () => {
+test('checking class output Daemon', () => {
   const result = new Daemon('Demon', 'Daemon');
 
   const expected = {
@@ -59,7 +62,7 @@ test('7 test', () => {
   expect(result).toEqual(expected);
 });
 
-test('8 test', () => {
+test('checking class output Undead', () => {
   const result = new Undead('qwerty', 'Undead');
 
   const expected = {
@@ -68,7 +71,7 @@ test('8 test', () => {
   expect(result).toEqual(expected);
 });
 
-test('9 test', () => {
+test('checking class output Zombie', () => {
   const result = new Zombie('zombie789', 'Zombie');
 
   const expected = {
